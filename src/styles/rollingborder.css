@@ -1,0 +1,132 @@
+.rollingborder-wrap {
+  position: relative;
+  width: 40vw;
+  z-index: 100;
+}
+
+.rollingborder-wrap img {
+  width: 100%;
+}
+
+.rollingborder {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+}
+
+.rollingborder-text-wrap {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.text-wrap-top {
+  animation: marquee-top 15s linear infinite;
+}
+
+.text-wrap-left {
+  animation: marquee-left 15s linear infinite;
+}
+
+.text-wrap-right {
+  animation: marquee-right 15s linear infinite;
+}
+
+.text-wrap-bottom {
+  animation: marquee-bottom 15s linear infinite;
+}
+
+.rollingborder span {
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.9rem;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  margin: 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.rollingborder-top {
+  width: 100%;
+  height: 2.1vw;
+  top: 0;
+  z-index: 10;
+}
+
+.rollingborder-left {
+  width: 2.1vw;
+  height: 100%;
+  writing-mode: vertical-lr;
+  left: 0;
+  bottom: 0;
+}
+
+.rollingborder-right {
+  width: 2.1vw;
+  height: calc(100% - 2.1vw);
+  right: 0;
+  top: 0;
+  writing-mode: vertical-lr;
+  z-index: 11;
+}
+
+.rollingborder-bottom {
+  width: 100%;
+  height: 2.1vw;
+  bottom: 0;
+}
+
+@keyframes marquee-top {
+  0% {
+    transform: translate(5%, 0);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translate(0, -50%);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes marquee-bottom {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    transform: translate(0%, 0);
+  }
+}
+
+.content-text {
+  position: absolute;
+  font-weight: 900;
+  font-size: 8vw;
+  bottom: 1vw;
+  left: 3vw;
+  color: #fff;
+  -webkit-text-stroke: #fff;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+}
